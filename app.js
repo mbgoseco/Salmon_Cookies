@@ -18,9 +18,9 @@ var loc1stPike = {
       var hourlyCookies = this.cookiesPerHour();
       sum += hourlyCookies;
       console.log(sum);
-      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies;
+      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies + ' cookies';
     }
-    this.hourlyTotals[i] = this.hourlyTotals[i] + sum;
+    this.hourlyTotals[i] = this.hourlyTotals[i] + sum + ' cookies';
     console.log(this.hourlyTotals);
   },
   render() {
@@ -60,9 +60,9 @@ var locSeaTac = {
       var hourlyCookies = this.cookiesPerHour();
       sum += hourlyCookies;
       console.log(sum);
-      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies;
+      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies + ' cookies';
     }
-    this.hourlyTotals[i] = this.hourlyTotals[i] + sum;
+    this.hourlyTotals[i] = this.hourlyTotals[i] + sum + ' cookies';
     console.log(this.hourlyTotals);
   },
   render() {
@@ -102,9 +102,9 @@ var locSeattleCenter = {
       var hourlyCookies = this.cookiesPerHour();
       sum += hourlyCookies;
       console.log(sum);
-      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies;
+      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies + ' cookies';
     }
-    this.hourlyTotals[i] = this.hourlyTotals[i] + sum;
+    this.hourlyTotals[i] = this.hourlyTotals[i] + sum + ' cookies';
     console.log(this.hourlyTotals);
   },
   render() {
@@ -144,9 +144,9 @@ var locCapHill = {
       var hourlyCookies = this.cookiesPerHour();
       sum += hourlyCookies;
       console.log(sum);
-      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies;
+      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies + ' cookies';
     }
-    this.hourlyTotals[i] = this.hourlyTotals[i] + sum;
+    this.hourlyTotals[i] = this.hourlyTotals[i] + sum + ' cookies';
     console.log(this.hourlyTotals);
   },
   render() {
@@ -186,9 +186,9 @@ var locAlki = {
       var hourlyCookies = this.cookiesPerHour();
       sum += hourlyCookies;
       console.log(sum);
-      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies;
+      this.hourlyTotals[i] = this.hourlyTotals[i] + hourlyCookies + ' cookies';
     }
-    this.hourlyTotals[i] = this.hourlyTotals[i] + sum;
+    this.hourlyTotals[i] = this.hourlyTotals[i] + sum + ' cookies';
     console.log(this.hourlyTotals);
   },
   render() {
