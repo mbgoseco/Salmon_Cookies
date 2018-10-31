@@ -87,7 +87,7 @@ function createTable() {
   var tbodyEl = document.createElement('tbody');
   var tfootEl = document.createElement('tfoot');
   var tableTitleEl = document.createElement('h2');
-  
+
   tableTitleEl.textContent = 'Cookies Needed By Location Each Day';
   mainEl.appendChild(tableTitleEl);
   mainEl.appendChild(tblEl);
