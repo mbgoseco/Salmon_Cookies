@@ -1,0 +1,29 @@
+h2 {
+  font-family: 'Trebuchet MS';
+  color: rgb(82, 82, 255);
+}
+ table {
+   border-collapse: collapse;
+ }
+
+ table, th, td {
+   border: 1px solid black;
+ }
+
+ th, td {
+   padding: 7px;
+   text-align: center;
+   font-family: Helvetica;
+ }
+
+ tr:nth-child(even) {
+   background-color: rgb(232, 242, 255);
+ }
+
+ tfoot {
+   background-color: rgb(202, 220, 255);
+ }
+
+ tr:hover, tfoot:hover {
+   background-color: rgb(202, 255, 255);
+ }

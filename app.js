@@ -56,10 +56,10 @@ Store.prototype.render = function() {
   storeRowEl.appendChild(dailyTotalEl);
   tblBodyEl.appendChild(storeRowEl);
 
-  // Rebuilding ALL store totals by hour and day in table footer after each new instance
-  var removeTd = document.querySelectorAll('#tbl-foot td');
-  for(var x = 0; x < removeTd.length; x++){
-    removeTd[x].parentNode.removeChild(removeTd[x]);
+  // Rebuilding footer totals of ALL stores by hour and day in table footer after each new instance
+  var removeFootTds = document.querySelectorAll('#tbl-foot td');
+  for(var x = 0; x < removeFootTds.length; x++){
+    removeFootTds[x].parentNode.removeChild(removeFootTds[x]);
   }
   var tfootEl = document.getElementById('tbl-foot');
   var storeTotalAllPerDay = 0;
