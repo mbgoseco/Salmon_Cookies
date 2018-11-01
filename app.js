@@ -35,12 +35,12 @@ Store.prototype.genHourlySales = function() {
 
 Store.prototype.render = function() {
   this.genHourlySales();
-  console.log(this);
+  // console.log(this);
 
   // Store row construction and header
   var tblBodyEl = document.getElementById('tbl-body');
   var storeRowEl = document.createElement('tr');
-  storeRowEl.setAttribute('rowName', this.location);
+  storeRowEl.id = this.location;
   var storeHeadEl = document.createElement('th');
   storeHeadEl.textContent = this.location;
   storeRowEl.appendChild(storeHeadEl);
@@ -127,7 +127,39 @@ function createFooter(store) {
   tfootEl.appendChild(dailyStoreTotalAllEl);
 };
 
-function addNewStore(event) {
+function replaceStore(store, minCustPerHour, maxCustPerHour, avgCookiesPerCust, row) {
+  store.minCustPerHour = minCustPerHour;
+  store.maxCustPerHour = maxCustPerHour;
+  store.avgCookiesPerCust = avgCookiesPerCust;
+  store.custPerHour = [];
+  store.cookiesPerHour = [];
+  store.dailyTotal = 0;
+  store.genHourlySales();
+  console.log(storeLocations);
+
+  // Removes old data from selcted row
+  var tRow = document.querySelectorAll('#tbl-body tr')[row];
+  var removeRowTds = tRow.querySelectorAll('td');
+  console.log(removeRowTds);
+  for(var x = 0; x < removeRowTds.length; x++) {
+    removeRowTds[x].parentNode.removeChild(removeRowTds[x]);
+  }
+
+  // Store data passed to existing row
+  for(var i = 0; i < store.cookiesPerHour.length; i++) {
+    var cookiesPerHourEl = document.createElement('td');
+    cookiesPerHourEl.innerText = store.cookiesPerHour[i];
+    console.log(store.cookiesPerHour[i]);
+    tRow.appendChild(cookiesPerHourEl);
+  }
+  var dailyTotalEl = document.createElement('td');
+  dailyTotalEl.innerText = store.dailyTotal;
+  tRow.appendChild(dailyTotalEl);
+
+  createFooter(store);
+};
+
+function addOrReplace(event) {
   event.preventDefault();
 
   var locationInput = event.target.location.value;
@@ -138,6 +170,23 @@ function addNewStore(event) {
   console.log('maxInput', typeof(maxInput));
   var cookiesPerCustInput = parseInt(event.target.cookiesPerCust.value);
   console.log('cookiesPerCustInput', typeof(cookiesPerCustInput));
+
+  // Checks if any fields are empty and stops input from being passed if so
+  if (!locationInput || !minInput || !maxInput || !cookiesPerCustInput) {
+    alert('Please fill in information for all fields.');
+    return;
+  }
+
+  for(var i = 0; i < storeLocations.length; i++) {
+    if (storeLocations[i].location === locationInput) {
+      replaceStore(storeLocations[i], minInput, maxInput, cookiesPerCustInput, i);
+      event.target.location.value = '';
+      event.target.minCustPH.value = '';
+      event.target.maxCustPH.value = '';
+      event.target.cookiesPerCust.value = '';
+      return;
+    }
+  }
 
   new Store(locationInput, minInput, maxInput, cookiesPerCustInput);
 
@@ -156,4 +205,4 @@ new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
 
 var formEl = document.getElementById('store-data');
-formEl.addEventListener('submit', addNewStore);
+formEl.addEventListener('submit', addOrReplace);
