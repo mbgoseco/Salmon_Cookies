@@ -7,7 +7,24 @@
 <body>
   <header></header>
   <main id="main-content">
+    <form id="store-data">
+      <fieldset>
+        <legend>Enter information here to add new store or edit existing stores</legend>
+        <label>Location name</label>
+        <input name="location">
 
+        <label>Minimum customers per hour</label>
+        <input name="minCustPH" type="number">
+        
+        <legend>Maximum customers per hour</legend>
+        <input name="maxCustPH" type="number">
+        
+        <legend>Average cookies sold per customer</legend>
+        <input name="cookiesPerCust" type="number" step=".1">
+
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
   </main>
   <footer><script src="app.js"></script>
   </footer>
