@@ -5,22 +5,21 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header></header>
+  <header>
+    <img id="logo" src="salmon.png">
+    <h1 id="title-head">SALES CHART</h1>
+  </header>
   <main id="main-content">
     <form id="store-data">
       <fieldset>
         <legend>Enter information here to add new a store or update an existing store</legend>
-        <label>Location name</label>
-        <input name="location">
+        <label>Location name<input name="location" placeholder="Enter store location"></label>
 
-        <label>Minimum customers per hour</label>
-        <input name="minCustPH" type="number">
+        <label>Minimum customers per hour<input name="minCustPH" type="number" placeholder="Min"></label>
         
-        <label>Maximum customers per hour</label>
-        <input name="maxCustPH" type="number">
+        <label>Maximum customers per hour<input name="maxCustPH" type="number" placeholder="Max"></label>
         
-        <label>Average cookies sold per customer</label>
-        <input name="cookiesPerCust" type="number" step=".1">
+        <label>Average cookies sold per customer<input name="cookiesPerCust" type="number" step=".1" placeholder="Avg"></label>
 
         <button type="submit">Submit</button>
       </fieldset>
