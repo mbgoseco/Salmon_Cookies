@@ -1,9 +1,38 @@
+body {
+  background: linear-gradient( rgba(34, 38, 99, 0.593), rgba(34, 38, 99, 0.593)), url(bear-salmon-fabric.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+#logo {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+#title-head {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  font-family: Tahoma;
+  font-size: 34px;
+  font-weight: bold;
+  color: rgb(255, 193, 187);
+}
+
 h2 {
   font-family: 'Trebuchet MS';
-  color: rgb(82, 82, 255);
+  color: white;
 }
  table {
    border-collapse: collapse;
+   background-color: white;
  }
 
  table, th, td {
@@ -49,6 +78,7 @@ h2 {
  input {
    width: 66px;
    margin-right: 15px;
+   margin-left: 3px;
  }
 
  input[name='location'] {
