@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient( rgba(34, 38, 99, 0.593), rgba(34, 38, 99, 0.593)), url(bear-bg.jpg);
+  background: linear-gradient( rgba(34, 38, 99, 0.593), rgba(34, 38, 99, 0.593)), url(bear-salmon-fabric.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -18,12 +18,13 @@ header {
 
 #title-head {
   position: absolute;
-  top: 47%;
-  left: 33%;
+  top: 45%;
+  left: 31%;
   font-family: Tahoma;
-  font-size: 34px;
+  font-size: 40px;
   font-weight: bold;
-  color: rgb(255, 193, 187);
+  -webkit-text-stroke: 2px rgb(255, 193, 187);
+  color: white;
 }
 
 .navLinks {
